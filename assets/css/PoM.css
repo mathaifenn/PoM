@@ -1,0 +1,155 @@
+
+/* ==================================================================
+   Patterns of the Mind — Full Styled Plain Static (Phone-first)
+   - Body serif (TeX Gyre Pagella / Palatino / Georgia fallback)
+   - UI sans (Open Sans / system)
+   - Earthy green accent
+=================================================================== */
+:root{
+  --bg: #faf9f6;
+  --ink: #0f1a14;
+  --muted: #526055;
+  --card: #ffffff;
+  --border: #e6e2da;
+  --accent: #2f7d4c;       /* earthy green */
+  --accent-2: #3f8d5c;     /* hover */
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 6px 12px -8px rgba(0,0,0,.12);
+  --maxw: 72ch;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0d1310; --ink:#e7efe9; --muted:#a9b6ae; --card:#0f1713; --border:#203127; --accent:#4fa06b; --accent-2:#63b47e;}
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.7 "Palatino Linotype","Book Antiqua",Palatino,"TeX Gyre Pagella",Georgia,serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%; height:auto; display:block; object-fit:contain}
+
+/* Header & Nav */
+.site-header{position:sticky; top:0; z-index:10;
+  background:color-mix(in oklab,var(--bg) 85%, transparent);
+  backdrop-filter:saturate(1.1) blur(6px);
+  border-bottom:1px solid var(--border);
+}
+.brand{display:flex; align-items:center; gap:.75rem; padding:.75rem 1rem}
+.logo{width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#9ecfae); box-shadow:var(--shadow)}
+.brand-text{display:flex; flex-direction:column}
+.site-title{font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-weight:700; color:var(--ink); text-decoration:none}
+.site-subtitle{color:var(--muted); font-size:.9rem}
+
+.layout{display:grid; grid-template-columns:1fr; gap:1rem; padding:1rem}
+.sidebar{border:1px solid var(--border); border-radius:var(--radius); background:var(--card); box-shadow:var(--shadow)}
+.nav{list-style:none; margin:0; padding:.5rem}
+.nav-link{
+  display:block; padding:.6rem .75rem; border-radius:10px; text-decoration:none; color:var(--ink);
+  font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.nav-link:hover{background:color-mix(in oklab,var(--card) 70%, var(--accent) 30%); color:#fff}
+.nav-link.active{background:color-mix(in oklab,var(--card) 60%, var(--accent) 40%); color:#fff}
+.content{
+  border:1px solid var(--border); border-radius:var(--radius); background:var(--card); box-shadow:var(--shadow);
+  padding:clamp(.75rem,.8vw + .75rem,1.5rem);
+}
+
+/* Two-column sections */
+.section{max-width:960px; margin:0 auto}
+.section h1{font-size:clamp(1.6rem,2vw + 1rem,2.4rem); margin:.5rem 0 1rem}
+.section p{margin:.8rem 0}
+.center{text-align:center}
+.twocol{display:grid; grid-template-columns:1fr; gap:1rem; align-items:center}
+.col.copy{order:1; max-width:var(--maxw)}
+.col.media{order:2}
+.col.media img{border-radius:12px; border:1px solid var(--border)}
+@media (min-width:720px){
+  .layout{grid-template-columns:260px 1fr; align-items:start}
+  .sidebar{position:sticky; top:76px; height:fit-content}
+  .twocol{grid-template-columns:1.1fr .9fr; gap:2rem; align-items:start}
+  .col.copy{order:1}
+  .col.media{order:2}
+}
+/* Normalize the two-column layout everywhere */
+.twocol {
+  display: grid;
+  grid-template-columns: 1fr;     /* stack on small screens */
+  gap: 1rem;
+  align-items: start;
+}
+.col.copy  { order: 1; max-width: var(--maxw); }
+.col.media { order: 2; }
+
+/* Desktop: always text left, image right */
+@media (min-width: 720px) {
+  .twocol { grid-template-columns: 1.1fr .9fr; }
+  .col.copy  { order: 1; }
+  .col.media { order: 2; }
+}
+
+/* Kill browser defaults that can throw off alignment */
+figure { margin: 0; }
+.col.copy, .col.media { float: none; }
+img, video { max-width: 100%; height: auto; display: block; object-fit: contain; }
+
+/* Hero (index only) */
+/* --- Smooth intro: no hero box, just flow --- */
+.hero {
+  display: block;
+  padding: 0 0 1.25rem;   /* gentle bottom space */
+  margin: 0 0 1.5rem;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+.hero-inner { max-width: 60ch; padding: 0; }
+.hero-inner h1 { margin: 0 0 .6rem; font-size: clamp(2rem, 5vw, 2.6rem); }
+.hero .lead { margin: 0 0 1rem; color: var(--muted); }
+.hero-media { display: none !important; } /* ensure no split panel appears */
+
+/* Remove the outer card look */
+.content {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  padding: clamp(1rem, 1vw + 1rem, 2rem); /* keep comfortable spacing */
+}
+.lead {
+  margin: 0 0 .25rem;       /* small bottom gap before the h1 */
+  font-size: 1.1rem;        /* a little larger than body text */
+  color: var(--muted);      /* softer grey-green tone */
+  font-weight: 500;         /* medium weight, stands out but not bold */
+}
+/* --- Make CTA button stick to bottom --- */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  flex: 1; /* take up remaining space */
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-cta {
+  margin-top: auto; /* push it to the bottom */
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 0;
+}
+
+
