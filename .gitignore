@@ -1,0 +1,19 @@
+# Node
+node_modules/
+.npm/
+
+# Eleventy
+_site/
+.cache/
+
+# Netlify / CI
+.netlify/
+
+# Logs & env
+*.log
+.env
+.env.*
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
