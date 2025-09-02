@@ -14,9 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Home — Patterns of the Mind</title>
   <link rel="stylesheet" href="assets/css/PoM.css">
   <link rel="stylesheet" href="assets/css/PoM.css?v=smooth1">
-  <!-- Optional webfonts (online only):
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -24,26 +21,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!--
-      Project structure (plain static, phone-first):
-      pom_site/
-      ├─ index.html
-      ├─ guide.html
-      ├─ sessions.html
-      ├─ why.html
-      ├─ setting.html
-      ├─ register.html
-      ├─ contact.html
-      └─ assets/
-         ├─ css/PoM.css
-         ├─ img/hero.jpg, guide.jpg, setting.jpg, placeholder.jpg
-         └─ pdf/PoMbro.pdf
-
-      Swap points:
-      - Replace images in assets/img/ with your own photos (keep names or update <img src>).
-      - Replace assets/pdf/PoMbro.pdf with your real brochure (same filename).
-      - Edit Google Maps URL on setting.html if needed.
-    -->
 <header class="site-header">
   <div class="brand">
     <div class="logo" aria-hidden="true"></div>
@@ -73,18 +50,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       try {
         const res = await fetch('partials/nav.html', {cache: 'no-store'});
         el.innerHTML = await res.text();
-
-        // Highlight current page
         const here = location.pathname.split('/').pop() || 'index.html';
-        const links = el.querySelectorAll('a');
-        links.forEach(a => {
+        el.querySelectorAll('a').forEach(a => {
           if (a.getAttribute('href') === here) {
             a.classList.add('active');
             a.setAttribute('aria-current', 'page');
           }
         });
       } catch (e) {
-        console.error("Nav load failed", e);
+        console.error('Nav load failed', e);
       }
     })();
   </script>
@@ -99,4 +73,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p><a class="button" href="assets/pdf/PoMbro.pdf" download>Download brochure</a></p>    
           <p>Join Dr. Mathai Fenn at Fenn Hall for an immersive journey into three worlds of intelligence: artificial, human, and natural. Discover how each reveals patterns that are usually hidden — and how those patterns can transform the way you think, learn, and create.</p>
           <p>This is not another lecture. It is a space for reflection, dialogue, and fresh insight. Two days at Fenn Hall will give you more than knowledge. It will give you new eyes to see the connections between nature, humanity, and machines — connections that shape the future and your own path within it.</p>
-          <p><strong> Reserve your place today, we only have a total
+          <p><strong> Reserve your place today, we only have a total of only 12 seats.</strong></p>
+        </div>
+        
+        <div class="col media">
+          <figure>
+            <img src="assets/img/placeholder.jpg" alt="Fenn Hall ambience">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-cta">
+      <a class="button" href="register.html" target="_blank" rel="noopener">Register Now for  29th-28th September</a>
+    </div>
+  </main>
+</div>
+</body>
+</html>

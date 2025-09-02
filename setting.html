@@ -5,61 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Setting — Patterns of the Mind</title>
   <link rel="stylesheet" href="assets/css/PoM.css">
-  <!-- Optional webfonts (online only):
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Patterns of the Mind</title>
-  <link rel="stylesheet" href="assets/css/PoM.css">
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MWG774J');</script>
-  <!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWG774J');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWG774J"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- rest of your page -->
-  </head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWG774J"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-
-
-<!--
-      Project structure (plain static, phone-first):
-      pom_site/
-      ├─ index.html
-      ├─ guide.html
-      ├─ sessions.html
-      ├─ why.html
-      ├─ setting.html
-      ├─ register.html
-      ├─ contact.html
-      └─ assets/
-         ├─ css/PoM.css
-         ├─ img/hero.jpg, guide.jpg, setting.jpg, placeholder.jpg
-         └─ pdf/PoMbro.pdf
-
-      Swap points:
-      - Replace images in assets/img/ with your own photos (keep names or update <img src>).
-      - Replace assets/pdf/PoMbro.pdf with your real brochure (same filename).
-      - Edit Google Maps URL on setting.html if needed.
-    -->
 <header class="site-header">
   <div class="brand">
     <div class="logo" aria-hidden="true"></div>
@@ -71,30 +28,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <div class="layout">
-  <nav class="sidebar" aria-label="Primary">
-    <ul class="nav">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="guide.html">Your guide</a></li>
-        <li><a class="nav-link" href="sessions.html">How the sessions unfold</a></li>
-        <li><a class="nav-link" href="why.html">Why it matters</a></li>
-        <li><a class="nav-link active" href="setting.html">The Setting</a></li>
-        <li><a class="nav-link" href="register.html">How to Register</a></li>
-        <li><a class="nav-link" href="contact.html">Contact us</a></li>
-    </ul>
-  </nav>
+  <!-- Shared nav loader -->
+  <nav class="sidebar" aria-label="Primary" id="primary-nav"></nav>
+  <script>
+    (async () => {
+      const el = document.getElementById('primary-nav');
+      try {
+        const res = await fetch('partials/nav.html', {cache: 'no-store'});
+        el.innerHTML = await res.text();
+        const here = location.pathname.split('/').pop() || 'index.html';
+        el.querySelectorAll('a').forEach(a => {
+          if (a.getAttribute('href') === here) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      } catch (e) {
+        console.error('Nav load failed', e);
+      }
+    })();
+  </script>
 
   <main id="main" class="content" tabindex="-1">
-
 <section class="section">
   <div class="twocol">
     <div class="col copy">
       <h1>The Setting</h1>
 <p class="center"><a class="button ghost" href="https://maps.app.goo.gl/dtBgVYngqoB1kBUv8" target="_blank" rel="noopener">See Fenn Hall on Google Maps</a></p>      
 <p>The workshop is hosted at <strong>Fenn Hall</strong>, a heritage home built in the early 1940s in traditional Kerala style. Its wooden beams, wide verandahs, and lotus pond create an atmosphere where ideas breathe easily and conversations find their rhythm. More than just a venue, Fenn Hall carries the grace of another era, blending history and hospitality in a way that encourages reflection, dialogue, and moments of clarity throughout the seminar.</p>
-
 <p>Participants are accommodated in air-conditioned rooms, each arranged for <strong>three people</strong> to stay comfortably. The seminar follows the <strong>American Plan</strong>, with the price inclusive of both stay and meals. Guests are served <strong>simple, authentic, home cooked Kerala food</strong>—wholesome, unpretentious, and deeply rooted in the local culture. Sharing meals together is part of the experience, offering not only nourishment but also a chance to slow down, connect with others, and enjoy the warmth of the place.</p>
-
-
     </div>
     <div class="col media">
       <figure>
@@ -109,4 +71,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </main>
 </div>
 </body>
-</html>
+</html]

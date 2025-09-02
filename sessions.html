@@ -5,61 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How the sessions unfold — Patterns of the Mind</title>
   <link rel="stylesheet" href="assets/css/PoM.css">
-  <!-- Optional webfonts (online only):
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Patterns of the Mind</title>
-  <link rel="stylesheet" href="assets/css/PoM.css">
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MWG774J');</script>
-  <!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWG774J');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWG774J"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- rest of your page -->
-  </head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWG774J"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-
-
-<!--
-      Project structure (plain static, phone-first):
-      pom_site/
-      ├─ index.html
-      ├─ guide.html
-      ├─ sessions.html
-      ├─ why.html
-      ├─ setting.html
-      ├─ register.html
-      ├─ contact.html
-      └─ assets/
-         ├─ css/PoM.css
-         ├─ img/hero.jpg, guide.jpg, setting.jpg, placeholder.jpg
-         └─ pdf/PoMbro.pdf
-
-      Swap points:
-      - Replace images in assets/img/ with your own photos (keep names or update <img src>).
-      - Replace assets/pdf/PoMbro.pdf with your real brochure (same filename).
-      - Edit Google Maps URL on setting.html if needed.
-    -->
 <header class="site-header">
   <div class="brand">
     <div class="logo" aria-hidden="true"></div>
@@ -71,31 +28,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <div class="layout">
-  <nav class="sidebar" aria-label="Primary">
-    <ul class="nav">
-        <li><a class="nav-link" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="guide.html">Your guide</a></li>
-        <li><a class="nav-link active" href="sessions.html">How the sessions unfold</a></li>
-        <li><a class="nav-link" href="why.html">Why it matters</a></li>
-        <li><a class="nav-link" href="setting.html">The Setting</a></li>
-        <li><a class="nav-link" href="register.html">How to Register</a></li>
-        <li><a class="nav-link" href="contact.html">Contact us</a></li>
-    </ul>
-  </nav>
+  <!-- Shared nav loader -->
+  <nav class="sidebar" aria-label="Primary" id="primary-nav"></nav>
+  <script>
+    (async () => {
+      const el = document.getElementById('primary-nav');
+      try {
+        const res = await fetch('partials/nav.html', {cache: 'no-store'});
+        el.innerHTML = await res.text();
+        const here = location.pathname.split('/').pop() || 'index.html';
+        el.querySelectorAll('a').forEach(a => {
+          if (a.getAttribute('href') === here) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      } catch (e) {
+        console.error('Nav load failed', e);
+      }
+    })();
+  </script>
 
-    <main id="main" class="content" tabindex="-1">
-
+  <main id="main" class="content" tabindex="-1">
 <section class="section">
   <div class="twocol">
     <div class="col copy">
       <h1>How sessions unfold</h1>
-      
 <p><strong>Session 1: Natural Intelligence.</strong> The first session looks at the living patterns in nature—how rivers branch, how trees grow, how flocks move. These natural designs remind us that intelligence is not only human-made but also embedded in the world around us. By paying attention to these patterns, we begin to see new connections and possibilities.</p>
 <p><strong>Session 2: Human Intelligence.</strong> The second session turns inward, exploring how we think, feel, and learn. It invites us to reflect on the rhythms of memory, emotion, and decision-making. Here, intelligence becomes deeply personal—helping us notice not only how our minds work but also how they shape the choices we make every day.</p>
 <p><strong>Session 3: Artificial Intelligence.</strong> The final session opens to the emerging world of machines. It examines the strengths and limits of AI, asking what it can teach us about ourselves, and what responsibilities it places on us. The conversation blends explanation, discussion, and reflection—encouraging participants to engage with technology not just as tools, but as partners in discovery.</p>
-
     </div>
-         <div class="col media">
+    <div class="col media">
       <figure>
         <img src="assets/img/sessions.jpg" alt="Portrait of Dr. Mathai Fenn">
       </figure>
