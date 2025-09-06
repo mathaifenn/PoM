@@ -1,0 +1,56 @@
+.:
+total 1304
+drwxr-xr-x 6 mathaifenn mathaifenn    4096 Aug 28 01:41 assets
+-rw-r--r-- 1 mathaifenn mathaifenn    3608 Sep  2 10:06 contact.html
+-rw-rw-r-- 1 mathaifenn mathaifenn       0 Sep  6 04:12 dir.txt
+-rw-r--r-- 1 mathaifenn mathaifenn    4128 Sep  2 10:06 guide.html
+-rw-r--r-- 1 mathaifenn mathaifenn    3976 Sep  2 10:06 indexbak.html
+-rw-rw-r-- 1 mathaifenn mathaifenn    3970 Sep  6 03:51 index.html
+drwxrwxr-x 2 mathaifenn mathaifenn    4096 Sep  3 02:03 partials
+-rw-rw-r-- 1 mathaifenn mathaifenn 1278994 Aug 27 19:53 PoM5.zip
+-rwxrwxr-x 1 mathaifenn mathaifenn    2017 Aug 27 21:23 PomUpdate.sh
+-rw-r--r-- 1 mathaifenn mathaifenn    3395 Sep  2 10:06 register.html
+-rw-r--r-- 1 mathaifenn mathaifenn    3531 Sep  2 10:06 sessions.html
+-rw-r--r-- 1 mathaifenn mathaifenn    3526 Sep  2 10:06 setting.html
+-rw-r--r-- 1 mathaifenn mathaifenn    2948 Aug 28 00:55 whyb.html
+-rw-r--r-- 1 mathaifenn mathaifenn    3440 Sep  2 10:06 why.html
+
+./assets:
+total 20
+drwxr-xr-x 2 mathaifenn mathaifenn 4096 Sep  6 04:01 css
+drwxr-xr-x 2 mathaifenn mathaifenn 4096 Aug 28 00:29 img
+drwxr-xr-x 2 mathaifenn mathaifenn 4096 Aug 28 12:40 pdf
+drwxrwxr-x 2 mathaifenn mathaifenn 4096 Aug 28 00:10 video
+-rw-r--r-- 1 mathaifenn mathaifenn 3007 Aug 27 16:04 why.html
+
+./assets/css:
+total 4
+-rw-r--r-- 1 mathaifenn mathaifenn 3393 Aug 28 08:36 PoM.css
+
+./assets/img:
+total 3016
+-rw-rw-r-- 1 mathaifenn mathaifenn  335892 Aug  8 14:47 Fennhall.jpg
+-rw-r--r-- 1 mathaifenn mathaifenn   28508 Aug 27 16:04 guideb.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn 1090228 Aug 10 02:23 guide.jpg
+-rw-r--r-- 1 mathaifenn mathaifenn   28356 Aug 27 16:04 herob.jpg
+-rw-r--r-- 1 mathaifenn mathaifenn   28952 Aug 27 16:04 placeholderb.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn  274264 Aug 27 18:31 placeholder.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn  257199 Aug 28 00:28 register.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn  306057 Aug 27 23:59 sessionsb.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn   67772 Aug 28 00:04 sessions.jpg
+-rw-r--r-- 1 mathaifenn mathaifenn   28798 Aug 27 16:04 setting.jpg
+-rw-rw-r-- 1 mathaifenn mathaifenn  619811 Aug 28 00:18 why.jpg
+
+./assets/pdf:
+total 1964
+-rw-rw-r-- 1 mathaifenn mathaifenn 2010180 Aug 28 12:25 PoMbro.pdf
+
+./assets/video:
+total 1840
+-rw-rw-r-- 1 mathaifenn mathaifenn 938295 Aug 28 00:05 sessions.mp4
+-rw-rw-r-- 1 mathaifenn mathaifenn 938295 Aug 28 00:05 sessions.webp
+
+./partials:
+total 8
+-rw-r--r-- 1 mathaifenn mathaifenn  496 Sep  2 10:06 nav.html
+-rw-rw-r-- 1 mathaifenn mathaifenn 3970 Sep  3 02:03 PoM_index_updated.html
